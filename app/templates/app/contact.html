@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<footer class="footer">
+<div class="containerFOOTER">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <br>
+            <br>
+            <br>
+            <h2>Developers</h2>
+            <p>Majaba, Robby Ross Tanael</p>
+        </div>
+        <div class="footer-section contact">
+            <br>
+            <br>
+            <br>
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> Department Shop@gmail.com</p>
+            <p><strong>Phone:</strong> 09559810613/09207726237</p>
+            <p><strong>Facebook:</strong> ProG1 Department Shop</p>
+            <p><strong>Address:</strong> Sampaguita Bacoor Cavite</p>
+        </div>
+        <div class="footer-section links">
+            <br>
+            <br>
+            <br>
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <h3>ProG1 Department Shop. All rights reserved.</h3>
+    </div>
+</div>
+</footer>
+{% endblock content %}

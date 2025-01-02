@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+<h1>Delete Reservation</h1>
+<form action="{% url 'reservation_delete' re.pk %}" method="post">
+    {% csrf_token %}
+    <p>Are You Sure You Want To Delete? </p>
+    <input type="submit" value="Delete">
+</form>
+{% endblock content %}

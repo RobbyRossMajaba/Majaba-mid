@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+    {% for Reservation in reservation%}
+    <div class="reservation_list">
+        <a href="{% url 'reservation_detail' Reservation.pk %}"><h2>{{Reservation.date}}</h2></a>
+        <p>{{Reservation.start_time}}</p>
+        <p>{{Reservation.end_time}}</p>
+        <p>{{Reservation.end_time}}</p>
+        <p>{{Reservation.is_confirmed}}</p>
+    </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% load static %}
+<header>
+    <div class="img_logo">
+        <img class="mylogo" src="{% static 'image/LOGOS1.png' %}"> 
+    </div>
+    <div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'reservation_create' %}">Reservation</a>
+        <a href="{% url 'reservation_list' %}">ReservationList</a>
+    </div>
+</header>
+
+
+

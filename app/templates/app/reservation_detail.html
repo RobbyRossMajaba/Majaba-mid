@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+    <div class="reservation_list">
+        <h2>{{reservation.date}}</h2>
+        <p>{{reservation.start_time}}</p>
+        <p>{{reservation.end_time}}</p>
+        <p>{{reservation.end_time}}</p>
+        <p>{{reservation.is_confirmed}}</p>
+    </div>
+    <a href="{% url 'reservation_update' object.pk %}">Edit Reservation</a>
+    <a href="{% url 'reservation_delete' object.pk %}">Delete Reservation</a>
+{% endblock content %}
