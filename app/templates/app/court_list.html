@@ -1,0 +1,41 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <div class="Heading_list">
+        <h2>Court List</h2>
+        <a href="{% url 'court_create' %}">Create New Court</a>
+
+        <table class="Body_list">
+            <thead>
+                <tr>
+                    <th>Court Status</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Available</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for Court in court %}
+                    <tr>
+                        <td>{{ Court.courtStatus }}</td>
+                        <td>{{ Court.location }}</td>
+                        <td>{{ Court.date }}</td>
+                        <td>{{ Court.available }}</td>
+
+                        {% if super_user %}
+                        <td>
+                            <a href="{% url 'court_update' %}">Edit</a>
+                            <a href="{% url 'court_delete' %}">Delete</a>
+                        </td>
+                        {% else %}
+
+                        {% endif %}
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>  
+    </div>
+{% endblock content %}

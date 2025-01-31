@@ -2,11 +2,13 @@
 
 {% load static %}
 {% block content %}
-<h1>Reservation</h1>
-<form action="{% url 'reservation_create' %}" method="post">
+
+<form action="{% url 'reservation_create' %}" method="POST" class="form_create">
+    <h2>Reservation</h2>
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Save">
+    <button type="submit" class="button_create">Create Reservation</button>
 </form>
+
 {% endblock content %}
 

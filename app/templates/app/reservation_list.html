@@ -2,13 +2,39 @@
 
 {% load static %}
 {% block content %}
-    {% for Reservation in reservation%}
-    <div class="reservation_list">
-        <a href="{% url 'reservation_detail' Reservation.pk %}"><h2>{{Reservation.date}}</h2></a>
-        <p>{{Reservation.start_time}}</p>
-        <p>{{Reservation.end_time}}</p>
-        <p>{{Reservation.end_time}}</p>
-        <p>{{Reservation.is_confirmed}}</p>
-    </div>
-    {% endfor %}
+
+<div class="Heading_list">
+    <h2>Reservation List</h2>   
+    <a href="{% url 'reservation_create' %}">Reservation Create</a>     
+
+    <table class="Body_list">
+        <thead>
+            <tr>
+                <th>Reservation Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Reservation in reservation %}
+                <tr>
+                    <td>{{ Reservation.reservation_date }}</td>
+                    <td>{{ Reservation.start_time }}</td>
+                    <td>{{ Reservation.end_time }}</td>
+                    <td>{{ Reservation.location }}</td>
+
+                    {% if super_user %}
+                    <td>
+                        <a href="{% url 'reservation_update' Reservation.pk %}">Update</a>
+                        <a href="{% url 'reservation_delete' Reservation.pk %}">Delete</a>
+                    </td>
+                    {% else %}
+
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+</div>       
 {% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="Heading_list">
+    <h2>Feedback List</h2>
+    <a href="{% url 'feedback_create' %}">Create Feedback</a>
+
+    <table class="Body_list">
+        <thead>
+            <tr>
+                <th>Rating</th>
+                <th>Comment</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Feedback in feedback %}
+                <tr>
+                    <td>{{ Feedback.rating }}</td>
+                    <td>{{ Feedback.comment }}</td>
+                    <td>{{ Feedback.date }}</td>
+
+                    {% if super_user %}
+                    <td>
+                        <a href="{% url 'feedback_update' Feedback.pk %}">Edit</a>
+                        <a href="{% url 'feedback_delete' Feedback.pk %}">Delete</a>
+                    </td>
+                    {% else %}
+
+                    {% endif %}
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+    {% endblock content %}    
+

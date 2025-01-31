@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <form action="{% url 'bookingHistory_create' %}" method="POST" class="form_create">
+        <h2>Create Booking History</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button_create">Submit</button>
+    </form>
+
+{% endblock content %}

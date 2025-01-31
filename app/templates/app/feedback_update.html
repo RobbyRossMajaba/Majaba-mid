@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <form method="post" class="form_signup">
+        <h2>Update Feedback</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button_signup">Save changes</button>
+        <a href="{% url 'feedback_list' %}">Back to list</a>
+    </form>
+    {% endblock content %}
+

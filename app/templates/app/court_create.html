@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <form action="{% url 'court_create' %}" method="POST" class="form_create">
+        <h2>Court Create</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button_create">Create Court</button>
+    </form>
+</html>
+
+{% endblock content %}

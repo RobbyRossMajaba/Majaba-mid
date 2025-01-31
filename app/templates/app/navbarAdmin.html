@@ -1,0 +1,20 @@
+{% load static %}
+<header>
+    <div class="img_logo">
+        <img class="mylogo" src="{% static 'image/LOGOS1.png' %}"> 
+    </div>
+    <div class="navbar">
+    
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'reservation_create' %}">Reservation</a>
+        <a href="{% url 'court_create' %}">Court Create</a> 
+        <a href="{% url 'feedback_create' %}">Feedback</a> 
+        <a href="{% url 'bookingHistory_create' %}">BookingHistory</a> 
+        <a href="{% url 'payment_create' %}">Payment</a> 
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Signup</a>
+        
+    </div>
+</header>

@@ -2,10 +2,15 @@
 
 {% load static %}
 {% block content %}
-<h1>Delete Reservation</h1>
-<form action="{% url 'reservation_delete' re.pk %}" method="post">
+
+<form method="post" class="form_delete">
+    <h2>Delete Reservation</h2>
+
+    <h1>Are you sure you want to delete this reservation?</h1>
     {% csrf_token %}
-    <p>Are You Sure You Want To Delete? </p>
-    <input type="submit" value="Delete">
+
+    <button type="submit" class="delete_button">Yes, delete</button>
+    <a href="{% url 'reservation_list' %}">Cancel</a>
 </form>
+
 {% endblock content %}

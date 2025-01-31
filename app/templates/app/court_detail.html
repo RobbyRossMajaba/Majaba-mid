@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+<div class="Heading_list">
+    <h2>Court Details</h2>
+</div>   
+    <table class="Body_list">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Available</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{ court.courtStatus }}</td>
+                    <td>{{ court.location }}</td>
+                    <td>{{ court.date }}</td>
+                    <td>{% if court.available %}Available{% else %}Unavailable{% endif %}</td>
+                    <td><a href="{% url 'court_update' court.court_Id %}">Update Court</a></td>
+                    <td><a href="{% url 'court_delete' court.court_Id %}">Delete Court</a></td>
+                </tr>
+        </tbody>
+    </table>  
+
+{% endblock content %}

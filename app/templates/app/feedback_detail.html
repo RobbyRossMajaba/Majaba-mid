@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="Heading_list">
+    <h2>Feedback Details</h2>
+</div>   
+    <table class="Body_list">
+        <thead>
+            <tr>
+                <th>Rating</th>
+                <th>Comment</th>
+                <th>Date</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{ feedback.rating }}</td>
+                    <td>{{ feedback.comment }}</td>
+                    <td>{{ feedback.date }}</td>
+                    <td><a href="{% url 'feedback_update' feedback.pk %}">Edit</a></td>
+                    <td><a href="{% url 'feedback_delete' feedback.pk %}">Delete</a></td>
+                </tr>
+        </tbody>
+    </table>  
+    {% endblock content %}

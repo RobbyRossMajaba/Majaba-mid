@@ -2,10 +2,12 @@
 
 {% load static %}
 {% block content %}
-<h1>Update Reservation</h1>
-<form action="{% url 'reservation_update' object.pk %}" method="post">
+
+<form method="post" class="form_signup">
+    <h2>Update Reservation</h2>
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" value="Update">
+    <button type="submit" class="button_signup">Save changes</button>
+    <a href="{% url 'reservation_list' %}">Back to list</a>
 </form>
 {% endblock content %}

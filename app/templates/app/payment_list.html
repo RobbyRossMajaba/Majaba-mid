@@ -1,0 +1,41 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="Heading_list">
+    <h2>Payments List</h2>
+    <a href="{% url 'payment_create' %}">Payment Create</a>
+
+    <table class="Body_list">
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Payment Date</th>
+                <th>Payment Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Payment in payment %}
+            <tr>
+                <td>{{ Payment.amount }}</td>
+                <td>{{ Payment.payment_date }}</td>
+                <td>{{ Payment.payment_status }}</td>
+
+                {% if super_user %}
+                <td><a href="{% url 'payment_update' Payment.pk %}">Edit</a><td>
+                <td><a href="{% url 'payment_delete' Payment.pk %}">Delete</a><td>
+                {% else %}
+
+                {% endif %}
+                <td></td>
+                <td></td>   
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>    
+    {% endblock content %}

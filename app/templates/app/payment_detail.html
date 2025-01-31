@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="Heading_list">
+    <h2>Payment Details</h2>
+</div>   
+    <table class="Body_list">
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Payment Date</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{ payment.amount }}</td>
+                    <td>{{ payment.payment_date }}</td>
+                    <td>{{ payment.payment_status }}</td>
+                    <td><a href="{% url 'payment_update' payment.pk %}">Edit</a></td>
+                    <td><a href="{% url 'payment_delete' payment.pk %}">Delete</a></td>
+                </tr>
+        </tbody>
+    </table>  
+    {% endblock content %}

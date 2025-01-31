@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <form action="{% url 'payment_create' %}" method="POST"  class="form_create">
+        <h2>Payment Create</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button_create">Create Payment</button>
+    </form>
+
+    {% endblock content %}

@@ -2,13 +2,31 @@
 
 {% load static %}
 {% block content %}
-    <div class="reservation_list">
-        <h2>{{reservation.date}}</h2>
-        <p>{{reservation.start_time}}</p>
-        <p>{{reservation.end_time}}</p>
-        <p>{{reservation.end_time}}</p>
-        <p>{{reservation.is_confirmed}}</p>
-    </div>
-    <a href="{% url 'reservation_update' object.pk %}">Edit Reservation</a>
-    <a href="{% url 'reservation_delete' object.pk %}">Delete Reservation</a>
+    
+    <div class="Heading_list">
+        <h2>Reservation Details</h2>
+    </div>   
+        <table class="Body_list">
+            <thead>
+                <tr>
+                    <th>Reservation Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Location</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>{{ reservation.reservation_date }}</td>
+                        <td>{{ reservation.start_time }}</td>
+                        <td>{{ reservation.end_time }}</td>
+                        <td>{{ reservation.location }}</td>
+                        <td><a href="{% url 'reservation_update' reservation.pk %}">Update</a></td>
+                        <td><a href="{% url 'reservation_delete' reservation.pk %}">Delete</a></td>
+                    </tr>
+            </tbody>
+        </table>  
+
 {% endblock content %}

@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <div class="Heading_list">
+        <h2>Booking History</h2>
+        <a href="{% url 'bookingHistory_create' %}">Create Booking History</a>
+   
+        <table class="Body_list">
+            <thead>
+                <tr>
+                    <th>Rating</th>
+                    <th>Reservation Date</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for BookingHistory in bookingHistory %}
+                    <tr>
+                        <td>{{ BookingHistory.rating }}</td>
+                        <td>{{ BookingHistory.reservation_date }}</td>
+                        <td>{{ BookingHistory.location }}</td>
+
+                        {% if super_user %}
+                            <td>
+                                <a href="{% url 'bookingHistory_update' BookingHistory.pk %}">Update</a>
+                                <a href="{% url 'bookingHistory_delete' BookingHistory.pk %}">Delete</a>
+                            </td>
+                        {% else %}
+
+                        {% endif %}
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>   
+    </div>  
+{% endblock content %}

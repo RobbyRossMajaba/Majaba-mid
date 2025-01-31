@@ -1,24 +1,11 @@
-
 .img_logo{
     height: 80px;
     position: fixed;
     display: flex;
     left: 40px;
 }
-.h2Home{
-    position: fixed;
-    padding-top: 2px;
-    padding-left: 245px;
-    font-size: 42px;
-    color: black;
-}
-.backgroundHome{
-    width: 1256px;
-    height: 582px;
-    /* filter: blur(5px); */
-}
 .navbar{
-    background-color: black;
+    background-color: #555;
     height: 80px;
     text-align: center;
     align-content: center;
@@ -31,81 +18,620 @@
     padding-right: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-size: larger;
-    margin-left: 50px;
+    margin-left: 5px;
     border-radius: 10px;
 }
 .navbar :hover{
-    background-color: #0ef;
+    background-color: rgb(60, 63, 63);
     color: black;
 }
 
-
+/* ===================================About======================================== */
 .content{
-    background-color: #333;
     color: black;
-    padding: 2px 0;
     text-align: center;
-    height: 581px;
+    height: 400px;
+    background-color: #17a2b8;
 }
-
-
-/* --------------------------FOOTER-------------------------- */
 
 .footer {
-    background-color: #333;
-    color: black;
-    padding: 2px 0;
-    text-align: center;
-    height: 581px;
+    background-color: #2c3e50;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.containerFOOTER {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    margin-bottom: 40px;
 }
 
 .footer-section {
     flex: 1;
-    padding: 0 20px;
-    margin-bottom: 20px;
+    min-width: 250px;
+    margin-right: 20px;
+    margin-bottom: 30px;
 }
 
 .footer-section h2 {
-    margin-top: 35px;
-    color: black;
-    font-size: 25px; 
+    font-size: 22px;
     margin-bottom: 10px;
+    color: #fff;
 }
+
 .footer-section p {
-    font-size: 15px;
+    font-size: 14px;
+    color: #ccc;
     line-height: 1.6;
 }
 
-.footer-section.links ul {
+.footer-section ul {
     list-style: none;
     padding: 0;
 }
 
-.footer-section.links ul li {
+.footer-section ul li {
     margin-bottom: 10px;
 }
 
-.footer-section.links ul li a {
-    color: #0ef;
+.footer-section ul li a {
     text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
     transition: color 0.3s ease;
 }
 
-.footer-section.links ul li a:hover {
-    color: black;
+.footer-section ul li a:hover {
+    color: #f39c12;
 }
 
 .footer-bottom {
-    margin-top: 20px;
-    font-size: 18px;
-    padding-bottom: 10px;
+    background-color: #34495e;
+    text-align: center;
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.footer-bottom h3 {
+    font-size: 16px;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section h2 {
+        font-size: 20px;
+    }
+
+    .footer-section p, .footer-section ul li a {
+        font-size: 12px;
+    }
+
+    .footer-bottom h3 {
+        font-size: 14px;
+    }
+}
+
+/* ===================================LOGIN/SIGNUP LOGOUT FORM======================================== */
+.LOGOUT{
+    color: whitesmoke;
+    background-color: rgb(60, 63, 63);
+    position: fixed;
+    top: 36px;
+    right: 170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.LOGOUT:hover{
+    background-color:orangered;
 }
 
 
+.login_SignUpForm {
+    background-color: #17a2b8;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.login_SignUpForm h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Input field styles */
+.login_SignUpForm div {
+    margin-bottom: 15px;
+}
+
+.login_SignUpForm label {
+    display: block;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.login_SignUpForm input {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.login_SignUpForm input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button styling */
+.buttons {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .login_SignUpForm {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .login_SignUpForm h2 {
+        font-size: 20px;
+    }
+
+    .login_SignUpForm input {
+        font-size: 14px;
+    }
+
+    .buttons {
+        font-size: 14px;
+    }
+}
+
+/* ===================================ListView======================================== */
+.Heading_list {
+    background-color:#17a2b8;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Heading_list h2 {
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+
+.Heading_list a {
+    position:fixed;
+    bottom: 440px;
+    left: 525px;
+    color: white;
+    padding: 10px 40px;
+    background-color: #28a745;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.Heading_list a:hover {
+    background-color: #218838;
+}
+
+table.Body_list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    /* background-color: #ffffff; */
+    background-color:#138496;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table.Body_list th, table.Body_list td {
+    padding: 15px;
+    text-align: left;
+}
+
+table.Body_list th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+}
+
+table.Body_list td {
+    color: #343a40;
+    border-bottom: 1px solid #ddd;
+}
+
+table.Body_list tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+table.Body_list tr:hover {
+    background-color: #f8f9fa;
+}
+
+table.Body_list td a {
+    padding: 8px 16px;
+    background-color: #17a2b8;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+table.Body_list td a:hover {
+    background-color: #138496;
+}
+table.Body_list {
+    margin: 0 auto;
+    max-width: 1000px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+/* =============================CreateView========================================================== */
+.form_create {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-left: 30px;
+    padding-right: 50px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.form_create h2{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.form_create p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.form_create label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.form_create input[type="text"],
+.form_create input[type="email"],
+.form_create input[type="number"],
+.form_create input[type="date"],
+.form_create select,
+.form_create textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+.form_create input[type="text"]:focus,
+.form_create input[type="email"]:focus,
+.form_create input[type="number"]:focus,
+.form_create input[type="date"]:focus,
+.form_create select:focus,
+.form_create textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+.button_create {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+.button_create:hover {
+    background-color: #218838;
+}
+
+
+@media (max-width: 768px) {
+    .form_create {
+        padding: 20px;
+    }
+
+    .button_create {
+        padding: 12px 20px;
+    }
+}
+/* ==================================DETAILVIEW===================================================== */
+
+.body_detail {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+.body_detail h2{
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.body_detail p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.body_detail a {
+    display: inline-block;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.body_detail a:hover {
+    background-color: #218838;
+}
+
+.body_detail a.delete {
+    background-color: #dc3545;
+}
+
+.body_detail a.delete:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .body_detail {
+        padding: 20px;
+    }
+
+    .body_detail p {
+        font-size: 1rem;
+    }
+
+    .body_detail a {
+        padding: 10px 20px;
+    }
+}
+/* ===============================DeleteView=============================================================== */
+.form_delete {
+    background-color:whitesmoke;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: 300px;
+    margin-top: 85px;
+    text-align: center;
+}
+.form_delete h2, h1{
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form_delete h1 {
+    font-size: 1.5rem;
+    color: #d9534f;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.form_delete h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Buttons */
+.delete_button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    margin: 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+.delete_button:hover {
+    background-color: #c82333;
+}
+
+.form_delete a {
+    font-size: 1.1rem;
+    padding: 11px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.form_delete a:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form_delete {
+        padding: 20px;
+    }
+
+    .form_delete h2, .form_delete h1 {
+        font-size: 1.5rem;
+    }
+
+    .delete_button,
+    .form_delete a {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+/* ==============================UpdateView============================================================ */
+
+.form_signup {
+    background-color: #17a2b8;
+    height: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    margin-left: 270px;
+    text-align: left;
+}
+
+.form_signup h2 {
+    font-size: 2.1rem;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: bold;
+    margin-left: 165px;
+}
+
+.form_signup p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.form_signup input,
+.form_signup select,
+.form_signup textarea {
+    width: 100%;
+    padding: 7px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form_signup input:focus,
+.form_signup select:focus,
+.form_signup textarea:focus {
+    border-color:#0056b3;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Buttons */
+.button_signup {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 90px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* width: 100%; */
+    transition: background-color 0.3s ease;
+}
+
+.button_signup:hover {
+    background-color: #218838;
+}
+
+.form_signup a {
+    font-size: 1.1rem;
+    position: fixed;
+    /* width: 100%; */
+    padding: 10px 100px;
+    margin-left: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color:#0056b3;
+    color: #fff;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.form_signup a:hover {
+    background-color: #007bff;
+}
+@media (max-width: 768px) {
+    .form_signup {
+        padding: 20px;
+    }
+
+    .form_signup h2 {
+        font-size: 1.5rem;
+    }
+
+    .button_signup,
+    .form_signup a {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
